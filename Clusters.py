@@ -2,25 +2,39 @@ import pandas as pd
 
 df=pd.read_excel('DatosRandom.xlsx')
 import matplotlib.pyplot as plt
-plt.ion()
-#print(df)
+print(df)
 #Crea una grafica de dispersión con los puntos de la columna 'x' y 'y' de df
 df.plot.scatter(x='X', y='Y')
-plt.show()
+plt.show(block=True)
+#Se importa la librería KMeans de la librería sklearn.cluster
 from sklearn.cluster import KMeans
-#Crea un objeto KMeans con 3 clusters
+#Se crea un objeto de la clase KMeans con 3 clusters
 kmeans = KMeans(n_clusters=3)
-#Ajusta el modelo de kmeans a los puntos de df
+#Se entrena el modelo con los datos de df
 kmeans.fit(df)
-#Obtiene los centroides de los clusters
+#Se obtienen los centroides de los clusters
 centroids = kmeans.cluster_centers_
-#Obtiene los labels de los clusters
+#Se obtiene la etiqueta de cada punto
 labels = kmeans.labels_
-print(centroids)
-print(labels)
-#Crea una grafica de dispersión con los puntos de la columna 'x' y 'y' de df
-#y colorea los puntos de acuerdo a los labels
-df.plot.scatter(x='X', y='Y', c=labels, cmap='viridis')
-#Dibuja los centroides de los clusters
-plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=200, alpha=0.5)
-plt.show()
+#Se crea una grafica de dispersión con los puntos de la columna 'x' y 'y' de df
+#Se asigna un color a cada cluster
+colors = ["g.", "r.", "b."]
+for i in range(len(df)):
+    plt.plot(df['X'][i], df['Y'][i], colors[labels[i]], markersize=10)
+#Se grafican los centroides
+plt.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=150, linewidths=5, zorder=10)
+plt.show(block=True)
+#Se importa la librería AgglomerativeClustering de la librería sklearn.cluster
+from sklearn.cluster import AgglomerativeClustering
+#Se crea un objeto de la clase AgglomerativeClustering con 3 clusters
+clustering = AgglomerativeClustering(n_clusters=3)
+#Se entrena el modelo con los datos de df
+clustering.fit(df)
+#Se obtiene la etiqueta de cada punto
+labels = clustering.labels_
+#Se crea una grafica de dispersión con los puntos de la columna 'x' y 'y' de df
+#Se asigna un color a cada cluster
+colors = ["g.", "r.", "b."]
+for i in range(len(df)):
+    plt.plot(df['X'][i], df['Y'][i], colors[labels[i]], markersize=10)
+plt.show(block=True)

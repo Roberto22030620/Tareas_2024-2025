@@ -1,0 +1,5 @@
+Propósito de "Notas.txt"
+1.- Escribir pendientes por hacer para no olvidarlas y tenerlas a la mano.
+2.- Escribir ideas tanto para nuevos códigos como para implementar en códigos existentes.
+3.- En esta sección también puedo escribir términos que me parezcan interesantes para aplicar o al menos intentarlo.
+...

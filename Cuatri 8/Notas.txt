@@ -1,0 +1,4 @@
+Propósito de "Notas.txt"
+1.- Escribir pendientes por hacer para no olvidarlas y tenerlas a la mano, en especial para los códigos que pide el maestro Arturo ya que solo los menciona a viva voz.
+2.- Escribir ideas tanto para nuevos códigos como para implementar en códigos existentes.
+...

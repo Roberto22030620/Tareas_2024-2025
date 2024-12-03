@@ -1,3 +1,6 @@
+#Código que genera un gráfico con puntos aleatorios y un número de clusters con un radio de distancia
+##La idea era que el radio de la circunferencia fuera calculado con la fórmula de Euclides, pero no supe implementarlo de una manera correca
+###Por lo que solo dibujé circunferencias con un radio fijo
 import matplotlib.pyplot as plt
 import numpy as np
 import random

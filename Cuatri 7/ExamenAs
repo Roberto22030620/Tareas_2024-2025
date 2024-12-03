@@ -1,0 +1,30 @@
+#https://www.delftstack.com/es/howto/python-pandas/how-to-add-one-row-to-pandas-dataframe/
+#https://www.geeksforgeeks.org/python-pandas-dataframe-loc/
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_excel("Regresion Lineal1.xlsx")
+
+#print("Orignial Data\n",df)
+#df=pd.read_excel("Regresion Lineal1.xlsx", sheet_name='Compleja')
+df = df.rename(columns={'Horas': 'X', 'Producción': 'Y'})
+df['X²']=df['X']**2
+df['XY']=df['X']*df['Y']
+df.loc['Sumatoria']=df.sum()
+#df.append({'X':df['X'].sum(),'Y':df['Y'].sum(),'':df['X²'].sum(),'XY':df['XY'].sum()}, ignore_index=True)
+print (df)
+
+x=[50,85]
+y=[200,340]
+plt.scatter(df['X'][:-1],df['Y'][:-1], color='blue', s=50)
+plt.plot(x,y, color='orange')
+plt.xlabel('Horas')
+plt.ylabel('Producción')
+plt.title('Producción x horas trabajadas')
+plt.grid(True, which='both', linestyle='-', linewidth=0.3)
+plt.show()
+
+#Contactarlos, generar base de datos para los históricos, cambiar variables cualitativas que tiene la encuesta a variables cuantitativas 
+#contratan a catch para un servicio de las encuestas que tienen, y luego...? para eso es la encuesta, para sus servicios de 
+#Metodologías para que contesten encuestas de satisfacción
+#Como consejo hay que cuidar bastante las habilidades blandas para el acercamiento con los clientes o externar algo en general
+#Software de control de versiones? te va a dar ventaja saber sobre eso y documentación del código.

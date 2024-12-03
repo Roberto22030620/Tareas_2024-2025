@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-#import numpy as np
+import numpy as np
 import random
 x=[]
 y=[]
@@ -19,19 +19,19 @@ def obtener_clusters():
         print("Cantidad no válida, valores permitidos entre 3 y 6")
         cantidad=obtener_clusters()
     return cantidad
+
 def graficar(cantidad, distancia, x, y):
     print("Clusters:", cantidad)
     print("Distancia:", distancia)
     plt.scatter(x, y)
-    #define centros de los clusters aleatoriamente, muestra el centro con un color diferente y crea una circunferencia con la distancia
     for i in range(cantidad):
         centro_x=random.randint(1,10)
         centro_y=random.randint(1,10)
         plt.scatter(centro_x, centro_y, c='red')
         circulo=plt.Circle((centro_x, centro_y), distancia, color='red', fill=False)
         plt.gcf().gca().add_artist(circulo)
-    ####queda pendiente preguntar a chat qué hace esto para poder explicarlo
     plt.show()
-    return 0
 
-graficar(obtener_clusters(), obtener_distancia(), x, y)
+distancia = obtener_distancia()
+cantidad_clusters = obtener_clusters()
+graficar(cantidad_clusters, distancia, x, y)

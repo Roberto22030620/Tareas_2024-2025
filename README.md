@@ -10,5 +10,6 @@ Los requerimientos para realizar lo escrito en puesta en marcha son 3:
 1.- Instalar Git, para clonar y mantener una comunicación entre el repositorio remoto de Github y tu repositorio local.
 2.- Instalar Python (para este repositorio en específico).
 3.- Instalar Visual studio code o tu editor de código favorito (menos el idle que viene con python ya que ese no permite correctamente la navegación entre carpetas).
+
 ![image](https://github.com/user-attachments/assets/9d7e3cbd-6024-4d4d-94c8-e7cdafcd0a33)
 ![image](https://github.com/user-attachments/assets/db7177a5-4fa7-4c46-8a24-883f085c89b7)
